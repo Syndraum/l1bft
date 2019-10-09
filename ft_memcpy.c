@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roalvare <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 16:27:09 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/08 17:45:10 by roalvare         ###   ########.fr       */
+/*   Created: 2019/10/09 09:37:34 by roalvare          #+#    #+#             */
+/*   Updated: 2019/10/09 10:18:12 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	byte;
-	unsigned char	*cursor;
-	size_t			i;
+	const unsigned char	*src_cpy;
+	unsigned char		*dst_cpy;
 
-	byte = (unsigned char)c;
-	cursor = b;
-	i = 0;
-	while (i < len)
+	src_cpy = src;
+	dst_cpy = dst;
+	while (n-- > 0)
 	{
-		*cursor = byte;
-		cursor++;
-		i++;
+		*dst_cpy = *src_cpy;
+		dst_cpy++;
+		src_cpy++;
 	}
-	return (b);
+	return (dst);
 }
