@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
+/*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:57:41 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/10 18:22:23 by roalvare         ###   ########.fr       */
+/*   Updated: 2019/10/10 21:12:41 by syndraum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+
+int		ft_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
 
 char	*ft_itoa(int n)
 {
@@ -21,24 +28,24 @@ char	*ft_itoa(int n)
 	int		i;
 
 	number = NULL;
-	len = 0;
+	len = (n <= 0) ? 1 : 0;
 	tmp = n;
 	i = 0;
-	while (tmp > 0)
+	while (tmp != 0)
 	{
 		len++;
 		tmp /= 10;
 	}
 	tmp = n;
-	printf("len = %d\n", len);
 	if (!(number = calloc(len + 1, sizeof(char))))
 		return (number);
-	while (tmp > 0)
+	*number = (n == 0) ? '0' : 0;;
+	*number = (n < 0) ? '-' : *number;
+	while (tmp != 0)
 	{
-		number[i] = (tmp % 10) + '0';
+		number[len - 1 - i] = ft_abs(tmp % 10) + '0';
 		tmp /= 10;
 		i++; 
 	}
-	printf("result = %s\n", number);
 	return (number);
 }
