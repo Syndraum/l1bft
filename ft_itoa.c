@@ -6,19 +6,12 @@
 /*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:57:41 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/10 21:12:41 by syndraum         ###   ########.fr       */
+/*   Updated: 2019/10/11 13:10:26 by syndraum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-
-int		ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
-}
 
 char	*ft_itoa(int n)
 {
