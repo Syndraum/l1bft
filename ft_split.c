@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
+/*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:53:31 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/10 17:51:48 by roalvare         ###   ########.fr       */
+/*   Updated: 2019/10/11 09:21:58 by syndraum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_strachr(const char *s, int c)
+{
+	int		i;
+	char	*chaine;
+
+	i = -1;
+	chaine = (char*)s;
+	while (chaine[++i])
+	{
+		if (chaine[i] == c)
+			return (&chaine[i]);
+	}
+	return (&chaine[i]);
+}
 
 void	free_tab(char **tab, int index)
 {
@@ -33,15 +48,15 @@ int		fill_tab(char *s, char c, char **tab)
 	cursor = s;
 	while (*cursor)
 	{
-		if (ft_strchr(cursor, c) == cursor)
+		if (ft_strachr(cursor, c) == cursor)
 		{
 			cursor += 1;
 			s = cursor;
 		}
 		else
 		{
-			cursor = ft_strchr(cursor, c);
-			if (!(tab[i] = calloc(cursor - s, sizeof(char))))
+			cursor = ft_strachr(cursor, c);
+			if (!(tab[i] = calloc(cursor - s + 1, sizeof(char))))
 			{
 				free_tab(tab, i);
 				return (0);
@@ -64,12 +79,12 @@ char	**ft_split(char const *s, char c)
 	tab = NULL;
 	while (*cursor)
 	{
-		if (ft_strchr(cursor, c) == cursor)
+		if (ft_strachr(cursor, c) == cursor)
 			cursor += 1;
 		else
 		{
 			count++;
-			cursor = ft_strchr(cursor, c);
+			cursor = ft_strachr(cursor, c);
 		}
 	}
 	if (!(tab = calloc(count + 1, sizeof(char*))))
