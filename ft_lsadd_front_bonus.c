@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lsadd_front_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/11 14:03:00 by syndraum          #+#    #+#             */
-/*   Updated: 2019/10/12 10:43:27 by roalvare         ###   ########.fr       */
+/*   Created: 2019/10/12 11:05:05 by roalvare          #+#    #+#             */
+/*   Updated: 2019/10/12 12:30:31 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	t_list	*elmt;
-
-	if (!(elmt = ft_calloc(1, sizeof(t_list))))
-		return (NULL);
-	elmt->content = content;
-	elmt->next = NULL;
-	return (elmt);
+	new->next = *alst;
+	*alst = new;
 }
