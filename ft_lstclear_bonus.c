@@ -6,7 +6,7 @@
 /*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:44:01 by syndraum          #+#    #+#             */
-/*   Updated: 2019/10/13 13:52:55 by syndraum         ###   ########.fr       */
+/*   Updated: 2019/10/13 13:54:26 by syndraum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void ft_lstclear(t_list **lst, void (*del)(void*))
 	while (cursor != NULL)
 	{
 		next_cursor = cursor->next;
-		
+		ft_lstdelone(cursor, del);
+		cursor = next_cursor;
 	}
-	
+	*lst = NULL;
 }
