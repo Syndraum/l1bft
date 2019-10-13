@@ -6,13 +6,13 @@
 /*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 13:44:01 by syndraum          #+#    #+#             */
-/*   Updated: 2019/10/13 13:54:26 by syndraum         ###   ########.fr       */
+/*   Updated: 2019/10/13 14:17:55 by syndraum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list *cursor;
 	t_list *next_cursor;
