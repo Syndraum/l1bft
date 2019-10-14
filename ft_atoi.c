@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roalvare <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:22:14 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/08 16:01:49 by roalvare         ###   ########.fr       */
+/*   Updated: 2019/10/14 14:06:45 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_return(char *str, int count)
+static int	ft_return(char *str, int count)
 {
 	int result;
 	int i;
@@ -28,14 +28,14 @@ int	ft_return(char *str, int count)
 	return (result);
 }
 
-int	ft_is_white_space(char c)
+static int	ft_is_white_space(char c)
 {
 	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int i;
 	int count;

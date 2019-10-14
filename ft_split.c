@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:53:31 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/11 09:21:58 by syndraum         ###   ########.fr       */
+/*   Updated: 2019/10/14 14:08:13 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strachr(const char *s, int c)
+static char	*ft_strachr(const char *s, int c)
 {
 	int		i;
 	char	*chaine;
@@ -27,7 +27,7 @@ char	*ft_strachr(const char *s, int c)
 	return (&chaine[i]);
 }
 
-void	free_tab(char **tab, int index)
+static void	free_tab(char **tab, int index)
 {
 	int i;
 
@@ -39,7 +39,7 @@ void	free_tab(char **tab, int index)
 	}
 }
 
-int		fill_tab(char *s, char c, char **tab)
+static int	fill_tab(char *s, char c, char **tab)
 {
 	int		i;
 	char	*cursor;
@@ -68,7 +68,7 @@ int		fill_tab(char *s, char c, char **tab)
 	return (1);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char	*cursor;
 	int		count;
