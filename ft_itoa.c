@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
+/*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:57:41 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/14 14:01:25 by roalvare         ###   ########.fr       */
+/*   Updated: 2019/10/14 22:12:28 by syndraum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static void	ft_first_c(char *number, int n)
 {
@@ -36,7 +35,7 @@ char		*ft_itoa(int n)
 		tmp /= 10;
 	}
 	tmp = n;
-	if (!(number = calloc(len + 1, sizeof(char))))
+	if (!(number = ft_calloc(len + 1, sizeof(char))))
 		return (number);
 	ft_first_c(number, n);
 	while (tmp != 0)
