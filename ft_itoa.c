@@ -3,17 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:57:41 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/11 13:10:26 by syndraum         ###   ########.fr       */
+/*   Updated: 2019/10/14 14:01:25 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-char	*ft_itoa(int n)
+static void	ft_first_c(char *number, int n)
+{
+	*number = (n == 0) ? '0' : 0;
+	*number = (n < 0) ? '-' : *number;
+}
+
+char		*ft_itoa(int n)
 {
 	char	*number;
 	int		len;
@@ -32,13 +38,12 @@ char	*ft_itoa(int n)
 	tmp = n;
 	if (!(number = calloc(len + 1, sizeof(char))))
 		return (number);
-	*number = (n == 0) ? '0' : 0;;
-	*number = (n < 0) ? '-' : *number;
+	ft_first_c(number, n);
 	while (tmp != 0)
 	{
 		number[len - 1 - i] = ft_abs(tmp % 10) + '0';
 		tmp /= 10;
-		i++; 
+		i++;
 	}
 	return (number);
 }
