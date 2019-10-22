@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 20:30:12 by syndraum          #+#    #+#             */
-/*   Updated: 2019/10/14 21:49:02 by syndraum         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:37:34 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		i;
 	char	*str;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	str = NULL;
 	if (ft_strlen(s) + 1 < start)

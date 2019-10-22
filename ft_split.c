@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
+/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:53:31 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/14 22:11:51 by syndraum         ###   ########.fr       */
+/*   Updated: 2019/10/22 15:43:20 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,10 @@ char		**ft_split(char const *s, char c)
 	int		count;
 	char	**tab;
 
+	if (s == NULL)
+		return (NULL);
 	cursor = (char*)s;
 	count = 0;
-	tab = NULL;
 	while (*cursor)
 	{
 		if (ft_strachr(cursor, c) == cursor)
@@ -88,7 +89,7 @@ char		**ft_split(char const *s, char c)
 		}
 	}
 	if (!(tab = ft_calloc(count + 1, sizeof(char*))))
-		return (tab);
+		return (NULL);
 	if (!fill_tab((char*)s, c, tab))
 	{
 		free(tab);
