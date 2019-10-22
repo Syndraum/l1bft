@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:53:31 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/22 15:43:20 by roalvare         ###   ########.fr       */
+/*   Updated: 2019/10/22 16:10:30 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char	*ft_strachr(const char *s, int c)
 	return (&chaine[i]);
 }
 
-static void	free_tab(char **tab, int index)
+static int	free_tab(char **tab, int index)
 {
 	int i;
 
@@ -37,6 +37,7 @@ static void	free_tab(char **tab, int index)
 		free(tab[i]);
 		i++;
 	}
+	return (0);
 }
 
 static int	fill_tab(char *s, char c, char **tab)
@@ -57,10 +58,7 @@ static int	fill_tab(char *s, char c, char **tab)
 		{
 			cursor = ft_strachr(cursor, c);
 			if (!(tab[i] = ft_calloc(cursor - s + 1, sizeof(char))))
-			{
-				free_tab(tab, i);
-				return (0);
-			}
+				return (free_tab(tab, i));
 			ft_strlcat(tab[i], s, cursor - s + 1);
 			i++;
 		}
@@ -68,14 +66,11 @@ static int	fill_tab(char *s, char c, char **tab)
 	return (1);
 }
 
-char		**ft_split(char const *s, char c)
+static int	count_w(char const *s, char c)
 {
 	char	*cursor;
 	int		count;
-	char	**tab;
 
-	if (s == NULL)
-		return (NULL);
 	cursor = (char*)s;
 	count = 0;
 	while (*cursor)
@@ -88,7 +83,16 @@ char		**ft_split(char const *s, char c)
 			cursor = ft_strachr(cursor, c);
 		}
 	}
-	if (!(tab = ft_calloc(count + 1, sizeof(char*))))
+	return (count);
+}
+
+char		**ft_split(char const *s, char c)
+{
+	char	**tab;
+
+	if (s == NULL)
+		return (NULL);
+	if (!(tab = ft_calloc(count_w(s, c) + 1, sizeof(char*))))
 		return (NULL);
 	if (!fill_tab((char*)s, c, tab))
 	{
