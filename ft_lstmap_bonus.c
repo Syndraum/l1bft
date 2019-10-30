@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
+/*   By: syndraum <syndraum@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/13 14:19:54 by syndraum          #+#    #+#             */
-/*   Updated: 2019/10/21 11:33:57 by roalvare         ###   ########.fr       */
+/*   Updated: 2019/10/29 23:53:49 by syndraum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	lst_rtr = NULL;
 	cursor = lst_rtr;
-	while (lst != NULL)
+	while (lst != NULL && f != NULL && del != NULL)
 	{
 		if (!(cursor = ft_lstnew(f(lst->content))))
 		{
