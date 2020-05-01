@@ -5,3 +5,4 @@ test.c
 test_*.c
 *.o
 libft.a
+main.c

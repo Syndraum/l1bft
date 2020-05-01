@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:52:53 by roalvare          #+#    #+#             */
-/*   Updated: 2019/10/22 11:16:00 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/01 17:07:39 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *l, void *(*f)(void *), void (*d)(void *));
+void			ft_lstprint(t_list *lst, void (*print)(void*));
+void			print_string(void *str);
 
 int				ft_abs(int n);
 

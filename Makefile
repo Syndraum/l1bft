@@ -48,7 +48,8 @@ SRCS_LIST	= $(addprefix list/,	ft_lstadd_back.c \
 									ft_lstlast.c \
 									ft_lstmap.c \
 									ft_lstnew.c \
-									ft_lstsize.c)
+									ft_lstsize.c \
+									ft_lstprint.c)
 
 SRCS		= ${SRCS_LIST} ${SRCS_IS} ${SRCS_MEM} ${SRCS_PUT} ${SRCS_STR} ${SRCS_MATH} ${SRCS_CONV} ${SRCS_ALLOC}
 
