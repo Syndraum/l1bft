@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 10:44:49 by syndraum          #+#    #+#             */
-/*   Updated: 2019/10/22 15:47:11 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/01 18:36:26 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
+	int len;
 
 	if (s != NULL)
 	{
-		i = 0;
-		while (s[i])
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
+		len = ft_strlen(s);
+		write(fd, s, len);
 	}
 }
