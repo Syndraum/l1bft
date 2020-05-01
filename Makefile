@@ -2,7 +2,7 @@ SRCS_MATH	= $(addprefix math/,	ft_abs.c)
 
 SRCS_ALLOC	= $(addprefix alloc/,	ft_calloc.c)
 
-SRCS_CONV	= $(addprefix conv/,		ft_atoi.c \
+SRCS_CONV	= $(addprefix conv/,	ft_atoi.c \
 									ft_itoa.c \
 									ft_tolower.c \
 									ft_toupper.c)
@@ -51,9 +51,32 @@ SRCS_LIST	= $(addprefix list/,	ft_lstadd_back.c \
 									ft_lstsize.c \
 									ft_lstprint.c)
 
-SRCS		= ${SRCS_LIST} ${SRCS_IS} ${SRCS_MEM} ${SRCS_PUT} ${SRCS_STR} ${SRCS_MATH} ${SRCS_CONV} ${SRCS_ALLOC}
+SRCS_PRINT	= $(addprefix printf/,	ft_char.c \
+									ft_content.c \
+									ft_convert.c \
+									ft_free.c \
+									ft_getter.c \
+									ft_has.c \
+									ft_int.c \
+									ft_list.c \
+									ft_node.c \
+									ft_printf.c \
+									ft_setter.c)
 
-INCLUDES 	= .
+SRCS		=	${SRCS_LIST} \
+				${SRCS_IS} \
+				${SRCS_MEM} \
+				${SRCS_PUT} \
+				${SRCS_STR} \
+				${SRCS_MATH} \
+				${SRCS_CONV} \
+				${SRCS_ALLOC} \
+				${SRCS_PRINT}
+
+HEADER		= $(addprefix ${INCLUDES}/,	libft.h \
+										ft_printf.h)
+
+INCLUDES 	= includes
 
 NAME		= libft.a
 
@@ -70,7 +93,7 @@ all:		${NAME}
 .c.o:
 			${CC} ${CFLAG} -c -I ${INCLUDES} $< -o ${<:.c=.o}
 
-$(NAME):	${OBJS}
+$(NAME):	${OBJS} ${HEADER}
 			ar rc ${NAME} ${OBJS}
 
 clean:
