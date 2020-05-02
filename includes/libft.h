@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:52:53 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/01 19:08:27 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/02 15:11:50 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void			print_string(void *str);
 int				ft_abs(int n);
 
 # include "ft_printf.h"
+# include "btree.h"
 
 #endif

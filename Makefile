@@ -64,6 +64,10 @@ SRCS_PRINT	= $(addprefix printf/,	ft_char.c \
 									ft_printf.c \
 									ft_setter.c)
 
+SRCS_BTREE	= $(addprefix btree/,	ft_btree_apply.c \
+									ft_btree_create_node.c)
+
+
 SRCS		=	${SRCS_LIST} \
 				${SRCS_IS} \
 				${SRCS_MEM} \
@@ -72,7 +76,8 @@ SRCS		=	${SRCS_LIST} \
 				${SRCS_MATH} \
 				${SRCS_CONV} \
 				${SRCS_ALLOC} \
-				${SRCS_PRINT}
+				${SRCS_PRINT} \
+				${SRCS_BTREE}
 
 HEADER		= $(addprefix ${INCLUDES}/,	libft.h \
 										ft_printf.h)
@@ -83,7 +88,7 @@ NAME		= libft.a
 
 CC			= clang
 
-CFLAG		= -Wall -Wextra -Werror
+CFLAG		= -Wall -Wextra -Werror -g
 
 OBJS		= ${SRCS:.c=.o}
 

@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   btree.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/05/02 13:41:50 by roalvare          #+#    #+#             */
+/*   Updated: 2020/05/02 15:13:18 by roalvare         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef BTREE_H
+# define BTREE_H
+
+# include <stdlib.h>
+
+typedef struct		s_btree
+{
+	struct	s_btree	*left;
+	struct	s_btree	*right;
+	void			*item;
+}					t_btree;
+
+t_btree				*btree_create_node(void *item);
+void				btree_apply_prefix(t_btree *root, void (*func)(void*));
+void				btree_apply_infix(t_btree *root, void (*func)(void*));
+void				btree_apply_suffix(t_btree *root, void (*func)(void*));
+
+#endif
