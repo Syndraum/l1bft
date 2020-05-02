@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:52:53 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/02 15:11:50 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/03 01:29:38 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ void			ft_lstprint(t_list *lst, void (*print)(void*));
 void			print_string(void *str);
 
 int				ft_abs(int n);
+int				ft_max(int v1, int v2);
+int				ft_min(int v1, int v2);
 
 # include "ft_printf.h"
 # include "btree.h"

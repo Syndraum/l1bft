@@ -1,6 +1,6 @@
-SRCS_MATH	= $(addprefix math/,	ft_abs.c)
-
-SRCS_ALLOC	= $(addprefix alloc/,	ft_calloc.c)
+SRCS_MATH	= $(addprefix math/,	ft_abs.c \
+									ft_max.c \
+									ft_min.c)
 
 SRCS_CONV	= $(addprefix conv/,	ft_atoi.c \
 									ft_itoa.c \
@@ -14,6 +14,7 @@ SRCS_PUT	= $(addprefix put/,		ft_putchar_fd.c \
 									ft_putnbr_fd.c)
 
 SRCS_MEM	= $(addprefix mem/,		ft_bzero.c \
+									ft_calloc.c \
 									ft_memcpy.c \
 									ft_memchr.c \
 									ft_memcmp.c \
@@ -68,7 +69,8 @@ SRCS_BTREE	= $(addprefix btree/,	ft_btree_apply.c \
 									ft_btree_create_node.c \
 									ft_btree_insert_data.c \
 									ft_btree_print.c \
-									ft_btree_search.c)
+									ft_btree_search.c \
+									ft_btree_level.c)
 
 
 SRCS		=	${SRCS_LIST} \
@@ -78,7 +80,6 @@ SRCS		=	${SRCS_LIST} \
 				${SRCS_STR} \
 				${SRCS_MATH} \
 				${SRCS_CONV} \
-				${SRCS_ALLOC} \
 				${SRCS_PRINT} \
 				${SRCS_BTREE}
 
