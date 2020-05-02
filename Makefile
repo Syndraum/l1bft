@@ -67,7 +67,8 @@ SRCS_PRINT	= $(addprefix printf/,	ft_char.c \
 SRCS_BTREE	= $(addprefix btree/,	ft_btree_apply.c \
 									ft_btree_create_node.c \
 									ft_btree_insert_data.c \
-									ft_btree_print.c )
+									ft_btree_print.c \
+									ft_btree_search.c)
 
 
 SRCS		=	${SRCS_LIST} \
