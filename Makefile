@@ -65,7 +65,9 @@ SRCS_PRINT	= $(addprefix printf/,	ft_char.c \
 									ft_setter.c)
 
 SRCS_BTREE	= $(addprefix btree/,	ft_btree_apply.c \
-									ft_btree_create_node.c)
+									ft_btree_create_node.c \
+									ft_btree_insert_data.c \
+									ft_btree_print.c )
 
 
 SRCS		=	${SRCS_LIST} \
@@ -80,7 +82,8 @@ SRCS		=	${SRCS_LIST} \
 				${SRCS_BTREE}
 
 HEADER		= $(addprefix ${INCLUDES}/,	libft.h \
-										ft_printf.h)
+										ft_printf.h \
+										btree.h)
 
 INCLUDES 	= includes
 
