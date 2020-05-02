@@ -5,7 +5,8 @@ SRCS_ALLOC	= $(addprefix alloc/,	ft_calloc.c)
 SRCS_CONV	= $(addprefix conv/,	ft_atoi.c \
 									ft_itoa.c \
 									ft_tolower.c \
-									ft_toupper.c)
+									ft_toupper.c \
+									ft_hexa.c)
 
 SRCS_PUT	= $(addprefix put/,		ft_putchar_fd.c \
 									ft_putstr_fd.c \
