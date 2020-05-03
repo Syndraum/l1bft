@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 01:16:05 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/03 01:40:32 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/03 02:36:00 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,33 @@ int	btree_level_count(t_btree *root)
 	return (ft_max(left, right));
 }
 
-// void	btree_apply_by_level(t_btree *root, void(*func)(void *item, int current_level, int is_first_elem))
-// (
-	
-// )
+void	ft_listdelfirst(t_list **lst)
+{
+	t_list	*tmp;
+
+	tmp = (*lst)->next;
+	free(*lst);
+	*lst = tmp;
+}
+
+void	btree_apply_by_level(t_btree *root, void(*func)(void *item, int current_level, int is_first_elem))
+{
+	t_list	*lst;
+	t_btree	*node;
+	int		level;
+
+	lst = NULL;
+	level = 0;
+	ft_lstadd_front(&lst, ft_lstnew(root));
+	while (lst)
+	{
+		node = (t_btree*)lst->content;
+		ft_listdelfirst(&lst);
+		func(node->item, level, 0);
+		if (node->left)
+			ft_lstadd_back(&lst, ft_lstnew(node->left));
+		if (node->right)
+			ft_lstadd_back(&lst, ft_lstnew(node->right));
+		level++;
+	}
+}
