@@ -6,13 +6,13 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 15:34:38 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/02 20:46:20 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/03 17:00:23 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	btree_insert_data(t_btree **root, void*item, int(*cmpf)(void*,void*))
+void	btree_insert_data(t_btree **root, void *item, int (*cmpf)(void*, void*))
 {
 	if (*root == NULL && (*root = btree_create_node(item)))
 		(*root)->item = item;
