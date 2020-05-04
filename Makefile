@@ -72,7 +72,9 @@ SRCS_BTREE	= $(addprefix btree/,	ft_btree_apply.c \
 									ft_btree_search.c \
 									ft_btree_level.c \
 									ft_btree_size.c \
-									ft_btree_clear.c)
+									ft_btree_clear.c \
+									ft_btree_rotation.c \
+									ft_btree_avl.c)
 
 
 SRCS		=	${SRCS_LIST} \
