@@ -6,7 +6,7 @@
 /*   By: roalvare <roalvare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 13:41:50 by roalvare          #+#    #+#             */
-/*   Updated: 2020/05/03 19:03:29 by roalvare         ###   ########.fr       */
+/*   Updated: 2020/05/04 02:07:51 by roalvare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int					btree_size(t_btree *root);
 void				btree_clear(t_btree **root, void (*del)(void *item));
 void				btree_rotate_left(t_btree **root);
 void				btree_rotate_right(t_btree **root);
+void				btree_insert_egal(t_btree **root, void *item, int (*cmpf)(void*, void*));
 
 #endif
